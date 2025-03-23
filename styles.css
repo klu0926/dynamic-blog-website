@@ -5,6 +5,7 @@
   --background-hover: #2e3a2e;
   --primary: #7aa85f;
   --highlight: #a4ff61;
+  --warning: rgb(252, 41, 41);
 }
 
 * {
@@ -89,6 +90,7 @@ button {
   box-shadow: none;
   cursor: pointer;
   font-family: 'Share Tech Mono', monospace;
+  font-weight: bold;
 }
 
 button:hover,
@@ -96,4 +98,65 @@ button:focus {
   color: var(--highlight);
   border: 2px inset var(--primary);
   background-color: var(--background-hover);
+}
+
+/* post-new.html */
+
+#post-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+#post-form button {
+  margin-bottom: 15px;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  color: var(--highlight);
+  background-color: var(--background-hover);
+  font-size: 1.1rem;
+  border: 2px solid var(--background-hover);
+  outline: none;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  color: var(--highlight);
+  background-color: var(--background-hover);
+  font-size: 1rem;
+  border: 2px solid var(--background-hover);
+  outline: none;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--primary);
+}
+
+.validate {
+  color: var(--warning);
+  margin-bottom: 10px;
+}
+
+.validate.valid {
+  color: var(--highlight);
 }
