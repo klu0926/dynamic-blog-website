@@ -1,0 +1,57 @@
+Dynamic Blog - Project Plan
+
+Pages
+1. index.html - Display all blog post using localStorage data as a list
+- list of posts
+
+2. new-post.html - Continas a form to create new posts and save them to localStorage
+- form to post new post : title,conent,image (optional) 
+
+3. post.html - Shows a specific post using ID from the URL, allow post CRUD
+- show post based on post "id" in the url
+- "edit" button allow user to edit the post "title" and "content"
+- "delete" button allow user to remove post from localStorage
+
+CRUD 
+Handle by JavaScript
+- Create : User create a post on new-post.html with "title" and "content", "id" is automatically generated
+- Read : post.html use post "id" in the url to load specific post
+- Update : User can edit a post in post.html
+- Delete : User can delete a post in post.html with a button
+
+LocalStorage (Posts)
+Each post is store in the localStorage.
+Key = posts
+Value = An array of post object
+[
+  {
+    id: "1",
+    title: "My First Post",
+    cover: "https://placehold.co/600x400" (optional, prvide defeault image if not include)
+    content: "This is my first post and I think it will be an amazing post, because I ..."
+  }
+]
+
+Form Validation
+- new-post.html : validation check if "title" and "content" is empty
+- post.html : validation check if the updated "title" and "content" is empty
+
+
+Responsive Styling (Bonus, Optional)
+Add responsive styles to ensure the layout allow mobile, tablet and desktop
+
+
+Git Workflow
+- use separete frature branches for each part
+* main
+* feature/model (to work with localStorage)
+* feature/homepage
+* feature/new-post
+* feature/view-edit-post
+* feature/delete-post
+* feature/styling (optional)
+ 
+Each branch require the following before mergin to "main"
+1. Pull request
+2. Code Review
+3. Merge to main
