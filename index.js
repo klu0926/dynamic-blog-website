@@ -6,7 +6,7 @@ class View {
   constructor() {
   }
   displayPosts(posts) {
-    const main = document.querySelector('#main')
+    const postsDiv = document.querySelector('#posts')
     posts.forEach(post => {
       const postDiv = document.createElement('div')
       const titleDiv = document.createElement('div')
@@ -22,7 +22,10 @@ class View {
       postDiv.appendChild(titleDiv)
       postDiv.appendChild(contentPre)
       imageDiv.appendChild(image)
-      main.appendChild(postDiv)
+      postsDiv.appendChild(postDiv)
+
+      // add class
+      postDiv.classList.add('post')
     })
 
   }
