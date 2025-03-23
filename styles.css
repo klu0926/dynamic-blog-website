@@ -93,11 +93,14 @@ button {
   font-weight: bold;
 }
 
-button:hover,
-button:focus {
+button:hover {
   color: var(--highlight);
   border: 2px inset var(--primary);
   background-color: var(--background-hover);
+}
+
+button:focus {
+  border: 2px outset var(--primary);
 }
 
 /* post-new.html */
@@ -159,4 +162,69 @@ textarea:focus {
 
 .validate.valid {
   color: var(--highlight);
+}
+
+/* post.html */
+#post-image-div {
+  width: 100%;
+}
+
+#post-image-url {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.5rem;
+  text-align: start;
+}
+
+#post-title {
+  width: 100%;
+  padding: 5px;
+  font-size: 2rem;
+}
+
+#post-content {
+  width: 100%;
+  min-height: 200px;
+  padding: 5px;
+  white-space: pre-line;
+}
+
+#post-image-div img {
+  padding: 5px;
+  width: 100%;
+}
+
+.editable {
+  border: 2px solid var(--highlight);
+}
+
+.editable:hover {
+  background-color: var(--background-hover);
+}
+
+.editable:focus {
+  color: var(--highlight);
+  outline: none;
+  border: 2px solid var(--highlight);
+}
+
+#edit-mode-notice {
+  flex-grow: 1;
+  color: var(--background-hover);
+  background-color: var(--highlight);
+  text-align: center;
+  vertical-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.2rem;
+}
+
+.edit-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-buttons button {
+  width: 100px;
 }
