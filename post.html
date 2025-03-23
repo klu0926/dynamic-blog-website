@@ -13,13 +13,20 @@
         <a href="index.html" style="margin-right: auto">
           <button id="back">Back</button>
         </a>
-        <button id="edit">Edit</button>
+        <p id="edit-mode-notice" style="display: none">EDIT MODE</p>
+        <button id="edit-btn">Edit</button>
       </div>
-      <h1 id="post-title">POST Title</h1>
       <div id="post-image-div">
         <img id="post-image" src="" alt="" />
       </div>
+      <div id="post-image-url" style="display: none"></div>
+      <h1 id="post-title">POST Title</h1>
       <div id="post-content"></div>
+
+      <div class="edit-buttons" style="display: none">
+        <button id="cancel-btn">Cancel</button>
+        <button id="save-btn">Save</button>
+      </div>
     </div>
 
     <footer></footer>
