@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="new-post.js"></script>
+    <title>New POST</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1>NEW POST</h1>
+      <div id="top">
+        <a href="index.html" style="margin-right: auto">
+          <button id="back">Back</button>
+        </a>
+      </div>
+      <form id="post-form" action="" novalidate>
+        <!-- title -->
+        <div class="input-div">
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" name="title" required />
+          <span id="title-validate" class="validate" style="visibility: hidden"
+            >validate</span
+          >
+        </div>
+
+        <!-- content -->
+        <div class="input-div">
+          <label for="post-content">Content</label>
+          <textarea
+            name="content"
+            id="post-content"
+            rows="10"
+            required
+          ></textarea>
+          <span
+            id="content-validate"
+            class="validate"
+            style="visibility: hidden"
+            >validate</span
+          >
+        </div>
+
+        <!-- cover -->
+        <div class="input-div">
+          <label for="post-content">Cover (Optional)</label>
+          <input type="text" id="post-cover" name="cover" />
+          <span id="cover-validate" class="validate" style="visibility: hidden"
+            >validate</span
+          >
+        </div>
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="reset-btn">Reset</button>
+        <span></span>
+      </form>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>
