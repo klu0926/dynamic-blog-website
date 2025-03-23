@@ -45,7 +45,7 @@ class View {
 
 
       // add post link
-      postAnchor.href = `post.html/?postId=${post.id}`
+      postAnchor.href = `post.html?postId=${post.id}`
 
       // add class
       imageDiv.classList.add('image-div')
