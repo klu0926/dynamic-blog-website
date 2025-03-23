@@ -1,6 +1,5 @@
 // Default image
-const defaultImage = "https://placehold.co/800x400"
-
+const defaultImage = "https://placehold.co/600x400/2e3a2e/7aa85f?text=Undefined&font=oswald"
 
 // create a new post
 class Post {
