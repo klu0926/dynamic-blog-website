@@ -23,16 +23,11 @@ class Controller {
   constructor(model, view) {
     this.model = model
     this.view = view
+    this.post = null
     this.isEditable = false
   }
   init() {
-    // get postId
-    const urlParams = new URLSearchParams(window.location.search)
-    const postId = urlParams.get('postId')
-
-    // disply post
-    const post = this.model.getPost(postId)
-    this.view.displayPost(post)
+    this.getPostAndRender()
 
     // event
     // edit btn
@@ -42,16 +37,28 @@ class Controller {
     document.querySelector('#cancel-btn').addEventListener('click', () => {
       // reset everything back
       this.toggleEditable()
-      this.view.displayPost(post)
+      this.view.displayPost(this.post)
     })
+
+    // save button
+    document.querySelector('#save-btn').addEventListener('click', () => this.onSave())
+  }
+  getPostAndRender() {
+    // get postId
+    const urlParams = new URLSearchParams(window.location.search)
+    const postId = urlParams.get('postId')
+
+    // disply post
+    this.post = this.model.getPost(postId)
+    this.view.displayPost(this.post)
   }
   toggleEditable() {
     const editButton = document.querySelector('#edit-btn')
     const postTitle = document.querySelector('#post-title')
     const postContent = document.querySelector('#post-content')
+    const postImageUrl = document.querySelector('#post-image-url')
     const editButtons = document.querySelector('.edit-buttons')
     const editModeTitle = document.querySelector('#edit-mode-notice')
-    const postImageUrl = document.querySelector('#post-image-url')
 
 
     if (!this.isEditable) {
@@ -94,6 +101,36 @@ class Controller {
       // edit buttons
       editButtons.style.display = 'none'
       editButton.textContent = 'Edit'
+    }
+  }
+  onSave() {
+    try {
+      // validate and save the post
+      const postTitle = document.querySelector('#post-title').textContent.trim()
+      const postContent = document.querySelector('#post-content').innerText.trim()
+      const postImageUrl = document.querySelector('#post-image-url').textContent.trim()
+
+      // check image url
+      if (postImageUrl) {
+        const myURL = new URL(postImageUrl)
+        if (myURL.protocol !== 'http:' && myURL.protocol !== 'https:') {
+          throw new Error('Cover image url is not valid')
+        }
+      }
+
+      // update post
+      this.model.editPost(
+        this.post.id,
+        postTitle || this.post.title,
+        postContent || this.post.content,
+        postImageUrl || this.post.cover
+      )
+
+      // toggle edit mode, and update with new post
+      window.location.reload()
+    } catch (err) {
+      // err
+      alert(err.message)
     }
   }
 }

@@ -100,7 +100,7 @@ button:hover {
 }
 
 button:focus {
-  border: 2px inset var(--primary);
+  border: 2px outset var(--primary);
 }
 
 /* post-new.html */
@@ -186,6 +186,7 @@ textarea:focus {
   width: 100%;
   min-height: 200px;
   padding: 5px;
+  white-space: pre-line;
 }
 
 #post-image-div img {
