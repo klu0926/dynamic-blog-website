@@ -29,6 +29,7 @@ Value = An array of post object
     title: "My First Post",
     cover: "https://placehold.co/600x400" (optional, prvide defeault image if not include)
     content: "This is my first post and I think it will be an amazing post, because I ..."
+    created: <new Date>
   }
 ]
 
