@@ -290,7 +290,7 @@ textarea:focus {
   border: 2px solid var(--highlight);
   padding: 20px;
   gap: 20px;
-  width: 70%;
+  width: 80%;
   max-width: 400px;
   text-align: center;
   background-color: var(--background-hover);
