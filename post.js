@@ -42,6 +42,15 @@ class Controller {
 
     // save button
     document.querySelector('#save-btn').addEventListener('click', () => this.onSave())
+
+    // delete button (show conform div)
+    document.querySelector('#delete-btn').addEventListener('click', () => this.onDeleteBtn())
+
+    // delete conform NO
+    document.querySelector('#conform-no').addEventListener('click', () => this.onConformNo())
+
+    // delete conform YES
+    document.querySelector('#conform-yes').addEventListener('click', () => this.onConformYes())
   }
   getPostAndRender() {
     // get postId
@@ -81,8 +90,6 @@ class Controller {
       editButtons.style.display = 'block'
       editButton.textContent = 'View'
 
-      // focus on content
-      postContent.focus()
     } else {
       // turn off edit mode
       this.isEditable = false
@@ -132,6 +139,18 @@ class Controller {
       // err
       alert(err.message)
     }
+  }
+  onDeleteBtn() {
+    document.querySelector('#conform-outter').style.display = 'block'
+  }
+  onConformNo() {
+    document.querySelector('#conform-outter').style.display = 'none'
+  }
+  onConformYes() {
+    // delete post
+    this.model.deletePost(this.post.id)
+    // return home
+    window.location.href = 'index.html'
   }
 }
 
