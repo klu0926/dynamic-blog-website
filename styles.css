@@ -25,6 +25,25 @@ h1 {
   text-transform: uppercase;
 }
 
+.page-title {
+  color: var(--highlight);
+  animation: flicker 0.2s linear infinite both, shift 0.2s linear infinite;
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100vw;
+  height: 300%;
+  background: none;
+  backdrop-filter: blur(15px);
+  filter: blur(0px);
+  pointer-events: none;
+}
+
 #main {
   display: flex;
   flex-direction: column;
@@ -34,6 +53,21 @@ h1 {
   min-height: 100vh;
   gap: 15px;
   padding: 10px;
+}
+
+/* static line effect */
+#main::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 10px;
+  backdrop-filter: blur(5px);
+  filter: blur(3px);
+  pointer-events: none;
+  animation: up-down-line 10s infinite;
 }
 
 #top {
@@ -60,10 +94,26 @@ h1 {
   text-decoration: none;
   border: 2px solid var(--background);
   padding: 10px;
+  transition: all 0.1s ease-in-out;
 }
 
 .post:hover {
   border: 2px solid var(--primary);
+  color: var(--highlight);
+  animation: shift 0.1s linear infinite, on-hover 0.2s linear;
+}
+
+.post:hover .title {
+  animation: flicker 0.2s linear infinite both, shift 0.1s linear infinite;
+}
+
+.post:hover .content {
+  animation: flicker 0.1s linear infinite, shift 0.25s linear infinite;
+}
+
+.post:hover .image-div {
+  filter: brightness(1.2) saturate(1.2);
+  animation: shift 0.4s linear infinite;
 }
 
 .title {
@@ -103,11 +153,14 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: underline;
+  animation: shift 0.2s infinite both;
 }
 
 button:hover {
   color: var(--background);
   background-color: var(--highlight);
+  animation: flicker 0.2s linear infinite both, shift 0.2s linear infinite,
+    on-hover 0.2s linear;
 }
 
 button:focus {
@@ -145,6 +198,10 @@ button:focus {
   gap: 5px;
 }
 
+.input-div:hover {
+  animation: flicker 0.2s linear infinite both, shift 0.1s linear infinite;
+}
+
 label {
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -173,7 +230,11 @@ textarea {
   font-family: 'Share Tech Mono', monospace;
 }
 
-input:focus,
+input:focus {
+  border: 2px solid var(--primary);
+  animation: flicker 0.2s linear infinite both, shift 0.2s linear infinite;
+}
+
 textarea:focus {
   border: 2px solid var(--primary);
 }
@@ -244,6 +305,8 @@ textarea:focus {
   color: var(--highlight);
   outline: none;
   border: 2px solid var(--highlight);
+  animation: flicker 0.2s linear infinite both, shift 0.1s linear infinite,
+    on-hover 0.2s linear;
 }
 
 #edit-mode-notice {
@@ -258,6 +321,7 @@ textarea:focus {
   height: 30px;
   line-height: 30px;
   font-size: 1.2rem;
+  animation: shift 0.1s infinite both, flicker 0.3s infinite both;
 }
 
 .edit-buttons {
@@ -315,6 +379,72 @@ textarea:focus {
   background-color: var(--highlight);
 }
 
+/* noice */
+.noise {
+  position: fixed;
+  inset: -400%;
+  background-image: url('images/noise.png');
+  opacity: 6%;
+  z-index: 9999;
+  animation: noise 0.2s linear infinite both;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* animation */
+@keyframes noise {
+  0% {
+    transform: translateX(15%) translateY(15%);
+  }
+  100% {
+    transform: translateX(-15%) translateY(-15%);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 100%;
+  }
+  30% {
+    opacity: 92%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes shift {
+  0% {
+    transform: translateX(0.05%) translateY(-0.03%);
+  }
+  30% {
+    transform: translateX(-0.03%) translateY(0.03%);
+  }
+  100% {
+    transform: translateX(0.05%) translateY(-0.03%);
+  }
+}
+
+@keyframes on-hover {
+  0% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes up-down-line {
+  0%,
+  80% {
+    top: -20%;
+  }
+  100% {
+    top: 120%;
+  }
+}
+
+/* screen size */
 @media (max-width: 768px) {
   /* index.html */
   #main {
