@@ -91,6 +91,8 @@ button {
   cursor: pointer;
   font-family: 'Share Tech Mono', monospace;
   font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 button:hover {
@@ -103,11 +105,22 @@ button:focus {
 }
 
 /* post-new.html */
+.post-form-div {
+  width: 600px;
+}
 
 #post-form {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
+  padding: 0px 15px;
+  margin-top: 15px;
+}
+
+.new-post-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 #post-form button {
