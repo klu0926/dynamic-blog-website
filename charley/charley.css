@@ -1,0 +1,44 @@
+.chat {
+  position: fixed;
+  display: block;
+  color: red;
+  cursor: default;
+  user-select: none;
+  z-index: 999;
+  font-size: 1.4rem;
+  animation: move 0.2s linear infinite, flicker 0.2s linear infinite !important;
+  filter: blur(0.7px);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 100%;
+  }
+  30% {
+    opacity: 92%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0.6px) translateY(-0.3px);
+  }
+  30% {
+    transform: translateX(-0.5px) translateY(0.2px);
+  }
+  100% {
+    transform: translateX(1px) translateY(-0.3px);
+  }
+}
+
+@keyframes on-hover {
+  0% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
