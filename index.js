@@ -4,12 +4,18 @@ import Post from './model/post.js'
 
 const welcomeTitle = 'Welcome, Please follow these rules'
 
-const welcomeImage = 'https://placehold.co/600x400/2e3a2e/7aa85f?text=Welcome&font=oswald'
+const welcomeImage = 'https://placehold.co/600x400/2e3a2e/7aa85f?text=WELCOME&font=oswald'
 
-const welcomePost = `This is the day you gain the power to write posts at your own will, but power comes with rules: 
+const welcomePost = `This is the day you gain the power to write posts at your own will, but power comes with rules:
 
-
-Rule 1 — Do not post after midnight; something else might answer. Rule 2 — If you see a post you don't remember writing, do not click on it. Rule 3 — If a post writes itself, do not finish it. Walk away. Rule 4 — If you delete a post and keep dreaming of it, you must rewrite and publish it. Rule 5 — If you create a post and the cover image isn't yours, do not stare at it for more than three seconds. Rule 6 — If the blog site turns red, close it immediately. Rule 7 — Do not read any post out loud. Rule 8 — If you start seeing a man’s face with no features in your dreams or daily life, stop using this site for 24 hours. Rule 9 — If you post your first post, DO NOT STOP for more than 33 hours. You must continue posting.`
+Rule 1 — Do not post after midnight; something else might answer.
+Rule 2 — If you see a post you don't remember writing, do not click on it. Rule 3 — If a post writes itself, do not finish it. Walk away.
+Rule 4 — If you delete a post and keep dreaming of it, you must rewrite and publish it. 
+Rule 5 — If you create a post and the cover image isn't yours, do not stare at it for more than three seconds. 
+Rule 6 — If the blog site turns red, close it immediately. 
+Rule 7 — Do not read any post out loud. 
+Rule 8 — If you start seeing a man’s face with no features in your dreams or daily life, stop using this site for 24 hours. 
+Rule 9 — If you post your first post, DO NOT STOP for more than 33 hours. You must continue posting.`
 
 class View {
   constructor() {

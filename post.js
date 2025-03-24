@@ -68,6 +68,7 @@ class Controller {
     const postImageUrl = document.querySelector('#post-image-url')
     const editButtons = document.querySelector('.edit-buttons')
     const editModeTitle = document.querySelector('#edit-mode-notice')
+    const postTextContent = document.querySelector('.post-text-content')
 
 
     if (!this.isEditable) {
@@ -77,11 +78,11 @@ class Controller {
       postContent.contentEditable = 'true'
       postImageUrl.contentEditable = 'true'
 
+      postTextContent.classList.add('editing')
       postTitle.classList.add('editable')
       postContent.classList.add('editable')
       postImageUrl.classList.add('editable')
       postImageUrl.style.display = 'block'
-
 
       // edit-mode-title
       editModeTitle.style.display = 'block'
@@ -97,6 +98,7 @@ class Controller {
       postContent.contentEditable = 'false'
       postImageUrl.contentEditable = 'false'
 
+      postTextContent.classList.remove('editing')
       postTitle.classList.remove('editable')
       postContent.classList.remove('editable')
       postImageUrl.classList.remove('editable')
