@@ -22,6 +22,7 @@ body {
 
 h1 {
   font-size: 4rem;
+  text-transform: uppercase;
 }
 
 #main {
@@ -29,9 +30,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin: 50px auto;
-  max-width: 800px;
-  min-height: 400px;
-  gap: 10px;
+  max-width: 720px;
+  min-height: 100vh;
+  gap: 15px;
   padding: 10px;
 }
 
@@ -54,10 +55,11 @@ h1 {
 .post {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   color: var(--primary);
   text-decoration: none;
   border: 2px solid var(--background);
-  padding: 5px;
+  padding: 10px;
 }
 
 .post:hover {
@@ -69,6 +71,10 @@ h1 {
   font-size: 1.2rem;
 }
 
+.content {
+  font-size: 1rem;
+}
+
 .image-div img {
   width: 100%;
   height: auto;
@@ -76,6 +82,10 @@ h1 {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   height: 150px;
   background-color: var(--background);
 }
@@ -182,23 +192,38 @@ textarea:focus {
   width: 100%;
 }
 
+.post-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  width: 100%;
+}
+
+.post-text-content.editing {
+  gap: 15px;
+  padding: 5px;
+}
+
 #post-image-url {
   width: 100%;
-  padding: 5px;
-  font-size: 1.5rem;
+  padding: 10px;
+  font-size: 1rem;
   text-align: start;
 }
 
 #post-title {
   width: 100%;
-  padding: 5px;
-  font-size: 2rem;
+  padding: 10px;
+  font-size: 1.6rem;
 }
 
 #post-content {
   width: 100%;
   min-height: 200px;
-  padding: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   white-space: pre-line;
 }
 
@@ -265,7 +290,9 @@ textarea:focus {
   border: 2px solid var(--highlight);
   padding: 20px;
   gap: 20px;
-  max-width: 380px;
+  width: 70%;
+  max-width: 400px;
+  text-align: center;
   background-color: var(--background-hover);
 }
 
@@ -286,4 +313,52 @@ textarea:focus {
 .conform-buttons-div button:hover {
   color: var(--background);
   background-color: var(--highlight);
+}
+
+@media (max-width: 768px) {
+  /* index.html */
+  #main {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .post {
+    padding: 10px;
+    border: 1px solid var(--primary);
+  }
+
+  .post:hover {
+    background-color: var(--background-hover);
+    border: 1px solid var(--primary);
+  }
+
+  .title {
+    color: var(--highlight);
+    font-size: 1.1rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+
+  .post .image-div {
+    display: none;
+  }
+
+  /* post.html */
+
+  #post-title {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  #post-content {
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
 }
