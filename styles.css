@@ -81,11 +81,11 @@ footer {
 }
 
 button {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 5px 10px;
   color: var(--primary);
   background-color: var(--background);
-  border: 2px outset var(--primary);
+  border: none;
   outline: none;
   box-shadow: none;
   cursor: pointer;
@@ -94,13 +94,12 @@ button {
 }
 
 button:hover {
-  color: var(--highlight);
-  border: 2px inset var(--primary);
-  background-color: var(--background-hover);
+  color: var(--background);
+  background-color: var(--highlight);
 }
 
 button:focus {
-  border: 2px outset var(--primary);
+  border: none;
 }
 
 /* post-new.html */
@@ -209,7 +208,10 @@ textarea:focus {
 }
 
 #edit-mode-notice {
-  flex-grow: 1;
+  width: 100%;
+  border: 5px solid var(--background);
+  border-top: 0px;
+  border-bottom: 0px;
   color: var(--background-hover);
   background-color: var(--highlight);
   text-align: center;
@@ -227,4 +229,47 @@ textarea:focus {
 
 .edit-buttons button {
   width: 100px;
+}
+
+#conform-outter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#conform {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  color: var(--highlight);
+  border: 2px solid var(--highlight);
+  padding: 20px;
+  gap: 20px;
+  max-width: 380px;
+  background-color: var(--background-hover);
+}
+
+.conform-buttons-div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.conform-buttons-div button {
+  border: none;
+  color: var(--highlight);
+  background-color: var(--background-hover);
+  width: 70px;
+  font-size: 1.2rem;
+}
+
+.conform-buttons-div button:hover {
+  color: var(--background);
+  background-color: var(--highlight);
 }
