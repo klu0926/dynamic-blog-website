@@ -17,7 +17,6 @@
   --warning: #ff0000;
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -404,6 +403,15 @@ textarea:focus {
   animation: noise 0.2s linear infinite both;
   pointer-events: none;
   overflow: hidden;
+}
+
+#forgive {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#forgive:hover {
+  animation: flicker 0.2s linear infinite both, shift 0.2s linear infinite;
 }
 
 /* animation */

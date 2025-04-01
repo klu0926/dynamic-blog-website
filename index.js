@@ -75,6 +75,13 @@ class Controller {
       posts = model.getPosts()
     }
     this.view.displayPosts(posts)
+
+    // forgive button
+    const forgive = document.querySelector('#forgive')
+    forgive.addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload()
+    })
   }
 }
 
