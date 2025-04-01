@@ -1,6 +1,7 @@
 // index.html
 import model from './model/model.js'
 import Post from './model/post.js'
+import charley from './charley/charley.js'
 
 const welcomeTitle = 'Welcome, Please follow these rules'
 
@@ -41,14 +42,12 @@ class View {
       content.textContent = post.content
       image.src = post.cover
 
-
       // appendchild
       postAnchor.appendChild(imageDiv)
       postAnchor.appendChild(titleDiv)
       postAnchor.appendChild(content)
       imageDiv.appendChild(image)
       postsDiv.appendChild(postAnchor)
-
 
       // add post link
       postAnchor.href = `post.html?postId=${post.id}`
@@ -96,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#create').addEventListener('click', () => {
     window.location.href = 'new-post.html'
   })
-
 })
 
+
+// Charley
+charley.play()

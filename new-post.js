@@ -1,6 +1,7 @@
 // new-post.html
 import model from './model/model.js'
 import Post from './model/post.js'
+import charley from './charley/charley.js'
 
 // If error mean this url is not valid
 function isUrlValidate(url) {
@@ -96,8 +97,15 @@ class Controller {
       const post = new Post(title, content, cover ? cover : null)
       model.createPost(post)
 
-      // return home page (later change to post.html with postId)
-      window.location.href = 'index.html'
+      // charley to chapter(2)
+      if (charley.memory.chapter === '1') {
+        charley.setChapter(2)
+      }
+      setTimeout(() => {
+        // return home page (later change to post.html with postId)
+        window.location.href = 'index.html'
+      }, 500)
+
     }
   }
 }
@@ -107,3 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const controller = new Controller(model, view)
   controller.init()
 })
+
+
+// Charley
+charley.play()

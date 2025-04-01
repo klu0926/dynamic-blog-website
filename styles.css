@@ -9,6 +9,15 @@
   --warning: rgb(252, 41, 41);
 }
 
+[data-theme='red'] {
+  --background: #2b0a0a;
+  --background-hover: #3e0f0f;
+  --primary: #ff4d4d;
+  --highlight: #ff1a1a;
+  --warning: #ff0000;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -166,6 +175,11 @@ button:hover {
 
 button:focus {
   border: none;
+}
+
+#delete-btn {
+  transition: all 0.1s ease-in-out;
+  z-index: 10;
 }
 
 /* post-new.html */
@@ -442,6 +456,32 @@ textarea:focus {
   }
   100% {
     top: 120%;
+  }
+}
+
+.shake {
+  animation: shake 0.1s linear infinite;
+  text-shadow: 0 0 5px red, 0 0 10px red;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, -1px);
+  }
+  40% {
+    transform: translate(2px, 1px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 
