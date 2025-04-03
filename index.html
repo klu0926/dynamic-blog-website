@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="index.js" type="module" defer></script>
     <script
       src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
       defer
     ></script>
-    <script type="module" src="charley/index-charley.js" defer></script>
+    <!--my js-->
+    <script src="index.js" type="module" defer></script>
     <title>Undefined</title>
   </head>
-  <body>
+  <body data-page="index">
     <div class="noise"></div>
     <div id="main">
-      <h1 class="page-title">Undefined Blog</h1>
+      <h1 id="blog-title" class="page-title">Undefined Blog</h1>
 
       <div id="top">
         <button id="generate">Generate</button>
@@ -25,7 +25,8 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 Undefined Blog. All rights reserved.</p>
+      <p>&copy; <span id="footer-blog-text">2025 Undefined Blog</span>. All rights reserved.</p>
+      <span id="forgive" >Forgive me</span>
     </footer>
   </body>
 </html>

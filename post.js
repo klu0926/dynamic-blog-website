@@ -1,6 +1,7 @@
 // new-post.html
 import model from './model/model.js'
 import Post from './model/post.js'
+import charley from './charley/charley.js'
 
 
 class View {
@@ -149,10 +150,22 @@ class Controller {
     document.querySelector('#conform-outter').style.display = 'none'
   }
   onConformYes() {
+
+    // charley to chapter(3)
+    const title = document.querySelector('#post-title')
+    if (title.innerText = 'Do you see me?') {
+      if (charley.memory.chapter === '2') {
+        charley.setChapter(3)
+      }
+    }
     // delete post
     this.model.deletePost(this.post.id)
-    // return home
-    window.location.href = 'index.html'
+
+    setTimeout(() => {
+      // return home
+      window.location.href = 'index.html'
+    }, 500)
+
   }
 }
 
@@ -163,3 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   controller.init()
 
 })
+
+
+// Charley
+charley.play()
